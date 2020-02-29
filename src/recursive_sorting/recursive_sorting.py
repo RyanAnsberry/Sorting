@@ -3,6 +3,30 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
+    # Index iterators for each array
+    i,j,k = 0,0,0
+    
+    # Compare and sort elements of both arrays to merged_arr
+    while i < len( arrA ) and j < len( arrB ):
+        if arrA[i] < arrB[j]:
+            merged_arr[k] = arrA[i]
+            k = k + 1
+            i = i + 1
+        else:
+            merged_arr[k] = arrB[j]
+            k = k + 1
+            j = j + 1
+
+    # Add any remaining elements to merged_arr
+    while i < len( arrA ):
+        merged_arr[k] = arrA[i]
+        k = k + 1
+        i = i + 1
+    
+    while j < len( arrB ):
+        merged_arr[k] = arrB[j]
+        k = k + 1
+        j = j + 1       
     
     return merged_arr
 
