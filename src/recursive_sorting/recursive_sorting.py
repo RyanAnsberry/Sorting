@@ -35,13 +35,14 @@ def merge( arrA, arrB ):
 def merge_sort( arr ):
     # TO-DO
     # Base Case:
-    if len( arr ) > 1:
-        # Continuously divide until single item arrays (recursion)
-        left = merge_sort( arr[ 0 : len( arr ) // 2 ])
-        right = merge_sort( arr[ len( arr ) // 2 : ])
+    if len( arr ) <= 1:
+        return arr
+    # Continuously divide until single item arrays (recursion)
+    left = merge_sort( arr[ 0 : len( arr ) // 2 ])
+    right = merge_sort( arr[ len( arr ) // 2 : ])
 
-        # Compare values and sort into arrays
-        arr = merge( left, right )
+    # Compare values and sort into arrays
+    arr = merge( left, right )
 
     return arr
 
@@ -63,3 +64,4 @@ def merge_sort_in_place(arr, l, r):
 def timsort( arr ):
 
     return arr
+    
